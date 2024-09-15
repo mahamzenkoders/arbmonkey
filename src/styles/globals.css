@@ -3,3 +3,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face {
+    font-family: 'Hacked';
+    src: url('/fonts/Hacked.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @keyframes gradient-rotate {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  .animate-gradient-border {
+    background: linear-gradient(270deg, purple, blue, purple);
+    background-size: 400% 400%;
+    animation: gradient-rotate 3s linear infinite;
+    border-radius: 9999px; /* Fully rounded */
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  
+
+  @keyframes spin-slow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .animate-spin-slow {
+    animation: spin-slow 4s linear infinite;
+  }
+  

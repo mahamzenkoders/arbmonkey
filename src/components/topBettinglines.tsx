@@ -9,7 +9,7 @@ const TopBettinglines = () => {
         <h1 className='text-5xl text-blue-950 font-semibold text-center'>
           We Search All The Sportsbooks For The Best Possible Lines, So
           <br />
-          <div className='text-center'>You Don't Have To.</div>
+          <div className='text-center'>You Don&apos;t Have To.</div>
         </h1>
         <Image
           src={homelines}

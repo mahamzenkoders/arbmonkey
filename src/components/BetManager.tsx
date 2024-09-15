@@ -37,7 +37,6 @@ const BetManagerCard = () => {
       secondTeamBettingSite: 'SuperBook',
       secondTeamHedgeAmount: '$170',
     },
-    // Add more bets as needed
   ];
 
   const completedBets = [
@@ -55,7 +54,6 @@ const BetManagerCard = () => {
       secondTeamBettingSite: 'DraftKings',
       secondTeamHedgeAmount: '$150',
     },
-    
   ];
 
   return (

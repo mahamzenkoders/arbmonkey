@@ -17,8 +17,8 @@ const HeroSection = () => {
           </span>
         </div>
         <div>
-          <Link href={'/courses'}>
-            <Button className=' p-7 px-6 h-16 text-xl text-black bg-white border-none hover:bg-purple-200'>
+          <Link href='/courses'>
+            <Button className='p-7 px-6 h-16 text-xl text-black bg-white border-none hover:bg-purple-200'>
               Dashboard
             </Button>
           </Link>
@@ -38,7 +38,7 @@ const HeroSection = () => {
             <h1 className='text-2xl text-gray-400 mt-3'>
               We offer a course that will show you how to hedge
               <br />
-              bets to guarantee profit. Once you're confident, use
+              bets to guarantee profit. Once you&apos;re confident, use
               <br /> our live pre-match line calculators to secure your
               <br />
               profits.
@@ -64,7 +64,7 @@ const HeroSection = () => {
             </div>
             <Button
               className='bg-black text-white mt-8 p-6 text-xl'
-              variant={'outline'}
+              variant='outline'
             >
               How It Works?
             </Button>

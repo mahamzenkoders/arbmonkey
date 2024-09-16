@@ -6,42 +6,43 @@
 
 
 @font-face {
-    font-family: 'Hacked';
-    src: url('/fonts/Hacked.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+  font-family: 'Hacked';
+  src: url('/fonts/Hacked.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-  @keyframes gradient-rotate {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 100% 50%;
-    }
-  }
-  
-  .animate-gradient-border {
-    background: linear-gradient(270deg, purple, blue, purple);
-    background-size: 400% 400%;
-    animation: gradient-rotate 3s linear infinite;
-    border-radius: 9999px; /* Fully rounded */
-    z-index: 1;
-    pointer-events: none;
-  }
-  
-  
 
-  @keyframes spin-slow {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .animate-spin-slow {
-    animation: spin-slow 4s linear infinite;
+  100% {
+    transform: rotate(360deg);
   }
-  
+}
+
+
+@keyframes spin-and-color-change {
+  0% {
+    transform: rotate(0deg);
+    background-color: #ad56e4;
+  }
+  50% {
+    transform: rotate(180deg);
+    background-color: hsl(257, 53%, 53%); 
+  }
+  100% {
+    transform: rotate(360deg);
+    background-color: #9d4dce;
+  }
+}
+
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-and-color-change {
+  animation: spin-and-color-change 20s linear infinite;
+}

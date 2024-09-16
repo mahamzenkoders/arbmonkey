@@ -163,7 +163,7 @@ const CourseCard = () => {
   }
 
   return (
-    <div className='m-6 flex flex-col'>
+    <div className='m-6 flex flex-col h-screen'>
       <div className='flex justify-between'>
         <div>
           <h1 className='text-2xl mx-10'>Courses</h1>

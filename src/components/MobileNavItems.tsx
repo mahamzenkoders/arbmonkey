@@ -19,19 +19,19 @@ const MobileNavItems = () => {
     >
       <div>
         <h1>Menu</h1>
-        <Link href='/courses'>
+        <Link href='/dashboard/courses'>
           <Button>
             <BookOpenText className='mr-2' />
             Courses
           </Button>
         </Link>
-        <Link href='/bet-manager'>
+        <Link href='/dashboard/bet-manager'>
           <Button>
             <DollarSign className='mr-2' />
             Bet Manager
           </Button>
         </Link>
-        <Link href='/hedge-calculator'>
+        <Link href='/dashboard/hedge-calculator'>
           <Button>
             <Calculator className='mr-2' />
             Hedge Calculator

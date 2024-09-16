@@ -62,7 +62,7 @@ const LoginPage = () => {
   };
 
   return (
-    <main className='bg-orange-300 h-screen flex items-center justify-center p-10'>
+    <main className='bg-orange-300 h-screen flex items-center justify-center p-10 w-screen'>
       <div className='grid w-full h-full grid-cols-1 bg-white md:grid-cols-2'>
         <div className='bg-[#02251d] text-white flex items-center justify-center flex-col'>
           <div className='my-4'>
@@ -82,7 +82,7 @@ const LoginPage = () => {
               Username
             </Label>
             <Input
-              className=' my-4 h-10 sm:w-96 w-74 mb-4 text-black'
+              className='my-4 h-10 sm:w-96 w-72 mb-4 text-black'
               type='text'
               id='username'
               name='username'
@@ -97,7 +97,7 @@ const LoginPage = () => {
               Password
             </Label>
             <Input
-              className='my-4 h-10 sm:w-96 w-74 items-center mb-10 text-black'
+              className='my-4 h-10 sm:w-96 w-72 mb-10 text-black'
               type='password'
               id='password'
               name='password'

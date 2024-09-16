@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { MobileNavBar } from './MobileSideBar';
 
 const Header = () => {
+  var date = new Date().toLocaleDateString().split('T')[0];
   return (
     <div className='bg-slate-100'>
       <div className='sm:hidden block'>
@@ -25,7 +26,7 @@ const Header = () => {
         <div className='flex p-4 justify-between'>
           <div>
             <h1 className='text-2xl'>Welcome, Maham</h1>
-            <p className='text-gray-400 text-sm mt-2'>Thursday 12 Sep, 2024</p>
+            <p className='text-gray-400 text-sm mt-2'>{date}</p>
           </div>
           <div>
             <Avatar>

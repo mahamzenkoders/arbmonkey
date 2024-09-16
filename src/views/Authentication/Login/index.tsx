@@ -82,7 +82,7 @@ const LoginPage = () => {
               Username
             </Label>
             <Input
-              className='my-4 h-10 w-96 mb-4 text-black'
+              className=' my-4 h-10 sm:w-96 w-74 mb-4 text-black'
               type='text'
               id='username'
               name='username'
@@ -97,7 +97,7 @@ const LoginPage = () => {
               Password
             </Label>
             <Input
-              className='my-4 h-10 w-96 mb-10 text-black'
+              className='my-4 h-10 sm:w-96 w-74 items-center mb-10 text-black'
               type='password'
               id='password'
               name='password'

@@ -58,7 +58,7 @@ const Sidebar = () => {
         <h2 className={`text-gray-900 ${isSideBar ? 'block' : 'hidden'}`}>
           Menu
         </h2>
-        <Link href='/courses'>
+        <Link href='/dashboard/courses'>
           <Button
             onClick={() => {
               setIsClicked('courses');
@@ -70,7 +70,7 @@ const Sidebar = () => {
             {isSideBar ? 'Courses' : <BookOpenText />}
           </Button>
         </Link>
-        <Link href='/bet-manager'>
+        <Link href='/dashboard/bet-manager'>
           <Button
             onClick={() => {
               setIsClicked('bet-manager');

@@ -17,7 +17,7 @@ const HeroSection = () => {
           </span>
         </div>
         <div>
-          <Link href='/courses'>
+          <Link href='/dashboard/courses'>
             <Button className='p-7 px-6 h-16 text-xl text-black bg-white border-none hover:bg-purple-200'>
               Dashboard
             </Button>

@@ -32,19 +32,20 @@ import {
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Formik, Field, Form, FormikValues } from 'formik';
+import { SkeletonCard } from './CardSkeleton';
 
 const initialValues = {
   title: '',
   description: '',
 };
 
-type Course = {
+interface Course {
   id: number;
   title: string;
   description: string;
   lesson: string;
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
-};
+}
 
 const generateUniqueId = (existingIds: number[]): number => {
   let newId = existingIds.length ? Math.max(...existingIds) + 1 : 1;
@@ -123,13 +124,20 @@ const CourseCard = () => {
   ]);
   const [search, setSearch] = useState('');
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value.toLowerCase());
+    const value = e.target.value.toLowerCase();
+    setSearch(value);
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   };
 
   const filteredCourses = courses.filter(course =>
@@ -140,8 +148,7 @@ const CourseCard = () => {
     values: FormikValues,
     { resetForm }: { resetForm: () => void },
   ) => {
-    const existingIds = courses.map(course => course.id);
-    const newId = generateUniqueId(existingIds);
+    const newId = generateUniqueId(courses.map(course => course.id));
 
     setCourses(prevCourses => [
       ...prevCourses,
@@ -163,7 +170,7 @@ const CourseCard = () => {
   }
 
   return (
-    <div className='m-6 flex flex-col h-screen'>
+    <div className='m-6 flex flex-col min-h-screen'>
       <div className='flex justify-between'>
         <div>
           <h1 className='text-2xl mx-10'>Courses</h1>
@@ -234,28 +241,36 @@ const CourseCard = () => {
         <Search />
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mx-10 mt-4'>
-        {filteredCourses.map(course => (
-          <Card key={course.id}>
-            <CardHeader>
-              <CardTitle>
-                <course.icon className='text-purple-400 h-10 w-10 mt-4' />
-              </CardTitle>
-              <CardDescription className='text-purple-400 font-medium'>
-                {course.lesson}
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div>
-                <h1 className='text-2xl font-bold text-blue-950'>
-                  {course.title}
-                </h1>
-                <p className='text-gray-400 text-sm mt-2'>
-                  {course.description}
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+        {loading ? (
+          <>
+            <SkeletonCard />
+            <SkeletonCard />
+            <SkeletonCard />
+          </>
+        ) : (
+          filteredCourses.map(course => (
+            <Card key={course.id}>
+              <CardHeader>
+                <CardTitle>
+                  <course.icon className='text-purple-400 h-10 w-10 mt-4' />
+                </CardTitle>
+                <CardDescription className='text-purple-400 font-medium'>
+                  {course.lesson}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div>
+                  <h1 className='text-2xl font-bold text-blue-950'>
+                    {course.title}
+                  </h1>
+                  <p className='text-gray-400 text-sm mt-2'>
+                    {course.description}
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          ))
+        )}
       </div>
     </div>
   );
